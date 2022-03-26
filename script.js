@@ -20,7 +20,8 @@ boxes.forEach((box) => {
 
 function checkDraw() {
   if (player1_choices.length + player2_choices.length === 9) {
-    winnerText.innerText = "Draw";
+    winner.classList.remove("hidden");
+    text.innerText = "Draw";
     console.log("draw");
   }
 }
