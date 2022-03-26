@@ -122,8 +122,8 @@ const throwConfetti = () => {
   }, 2000);
 };
 function gameOver(player) {
+  throwConfetti();
   winner.classList.remove("hidden");
-  // throwConfetti();
   text.innerText = `Player ${player} won`;
   if (player === "1") {
     player1_win++;
