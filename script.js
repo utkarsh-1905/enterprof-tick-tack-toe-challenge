@@ -117,13 +117,13 @@ const throwConfetti = () => {
   const confettiSettings = { target: canvas, clock: 30, rotate: true };
   const confetti = new ConfettiGenerator(confettiSettings);
   confetti.render();
-  winner.classList.remove("hidden");
   setTimeout(() => {
     confetti.clear();
   }, 2000);
 };
 function gameOver(player) {
-  throwConfetti();
+  winner.classList.remove("hidden");
+  // throwConfetti();
   text.innerText = `Player ${player} won`;
   if (player === "1") {
     player1_win++;
