@@ -31,6 +31,7 @@
   justify-content: space-around;
   align-items: center;
   user-select: none;
+  position: relative;
 }
 
 .row {
@@ -69,13 +70,15 @@
 }
 .winner {
   position: absolute;
-  width: 30%;
-  height: 30%;
-  background-color: pink;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #ffffffaa;
   z-index: 2;
   font-size: 2rem;
   text-align: center;
-  color: red;
+  color: #6666ff;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,4 +97,19 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
+}
+
+.scores {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.p1,
+.p2 {
+  margin: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
 }

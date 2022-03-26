@@ -5,6 +5,12 @@ let turn = "player1";
 const changeTurn = document.querySelector(".turn");
 const winner = document.querySelector(".winner");
 const text = document.querySelector(".text");
+const p1 = document.querySelector(".p1");
+const p2 = document.querySelector(".p2");
+let player1_win = 0;
+let player2_win = 0;
+p1.innerText = "Score of Player 1: " + player1_win;
+p2.innerText = "Score of Player 2: " + player2_win;
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
@@ -26,7 +32,7 @@ function fillChoice(box) {
         '<img src="./assets/x-solid.svg" class="box-img" alt="x" />';
       player1_choices.push(box.id);
       turn = "player2";
-      changeTurn.innerHTML = "Player 2";
+      changeTurn.innerHTML = "Turn: Player 2";
       checkWinner(player1_choices, "1");
     }
   } else {
@@ -35,7 +41,7 @@ function fillChoice(box) {
         '<img src="./assets/o-solid.svg" class="box-img" alt="x" />';
       player2_choices.push(box.id);
       turn = "player1";
-      changeTurn.innerHTML = "Player 1";
+      changeTurn.innerHTML = "Turn: Player 1";
       checkWinner(player2_choices, "2");
     }
   }
@@ -114,12 +120,18 @@ const throwConfetti = () => {
   winner.classList.remove("hidden");
   setTimeout(() => {
     confetti.clear();
-    winner.classList.add("hidden");
-  }, 5000);
+  }, 2000);
 };
 function gameOver(player) {
   throwConfetti();
   text.innerText = `Player ${player} won`;
+  if (player === "1") {
+    player1_win++;
+  } else if (player === "2") {
+    player2_win++;
+  }
+  p1.innerText = "Score of Player 1: " + player1_win;
+  p2.innerText = "Score of Player 2: " + player2_win;
 }
 
 const replayBtn = document.querySelector(".replay");
@@ -129,8 +141,7 @@ function replay() {
   player2_choices = [];
   text.innerText = "";
   winner.classList.add("hidden");
-  confetti.clear();
-  changeTurn.innerHTML = "Player 1";
+  changeTurn.innerHTML = "Turn: Player 1";
   boxes.forEach((box) => {
     box.innerHTML = "";
   });

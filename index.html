@@ -10,13 +10,13 @@
   </head>
   <body>
     <div class="container">
-      <div class="winner hidden">
-        <div class="text"></div>
-        <button class="replay">Let's Play Again!!</button>
-      </div>
       <canvas id="my-canvas"></canvas>
       <h1 class="title">Tic-Tac-Toe Game</h1>
       <div class="playing-area">
+        <div class="winner hidden">
+          <div class="text"></div>
+          <button class="replay">Let's Play Again!!</button>
+        </div>
         <div class="row">
           <div class="box" id="1"></div>
           <div class="box" id="2"></div>
@@ -33,9 +33,12 @@
           <div class="box" id="9"></div>
         </div>
       </div>
-      <h4 class="turn">Player 1</h4>
+      <h4 class="turn">Turn: Player 1</h4>
+      <div class="scores">
+        <div class="p1"></div>
+        <div class="p2"></div>
+      </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
